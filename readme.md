@@ -46,4 +46,4 @@ Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtLmZpbGhvd0BnbWFpbC5jb20iLCJleHAiOjE1OTcw
 
 ou via algum client rest, basta utilizar esse valor no Header Authorization com o padrão "Authorization: Bearer + Token"
 
-vale salientar que entre a pasta Bearer e o Token, contem um espaço.
+vale salientar que entre a palavra Bearer e o Token, contem um espaço.
