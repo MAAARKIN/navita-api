@@ -33,7 +33,7 @@ public class Patrimony {
 	@Column(name = "REGISTER_NUMBER")
 	@Setter(AccessLevel.NONE)
 	private String registerNumber;
-	@OneToOne(fetch = FetchType.LAZY)
+	@OneToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "BRAND_ID")
 	private Brand brand;
 	

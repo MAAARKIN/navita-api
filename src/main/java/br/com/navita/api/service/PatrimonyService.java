@@ -10,6 +10,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
+import br.com.navita.api.domain.model.Brand;
 import br.com.navita.api.domain.model.Patrimony;
 import br.com.navita.api.domain.repository.PatrimonyRepository;
 import br.com.navita.api.exception.RecordNotFoundException;
@@ -20,13 +21,19 @@ public class PatrimonyService {
 
 	@Autowired
 	private PatrimonyRepository repository;
+	
+	@Autowired
+	private BrandService brandService;
 
 	public Patrimony find(Long id) {
 		return repository.findById(id).orElse(null);
 	}
 
 	public Patrimony save(final Patrimony patrimony) {
-		
+		Brand find = brandService.find(patrimony.getBrand().getId());
+		if (find == null) {
+			throw new RecordNotFoundException("The brand that you trying to save does not exist");
+		}
 		return repository.save(patrimony);
 	}
 
