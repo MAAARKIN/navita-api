@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+	xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+	
+	<changeSet id="0" author="marcos.filho">
+
+		<preConditions onFail="MARK_RAN">
+			<not>
+				<tableExists tableName="PATRIMONIES" />
+			</not>
+		</preConditions>
+
+		<createTable tableName="PATRIMONIES">
+			<column autoIncrement="true" name="ID" type="bigint">
+				<constraints primaryKey="true"
+					primaryKeyName="PK_PATRIMONIES" />
+			</column>
+			<column name="NAME" type="varchar(180)">
+				<constraints nullable="false" />
+			</column>
+			<column name="DESCRIPTION" type="varchar(200)" />
+			<column name="REGISTER_NUMBER" type="varchar(200)">
+				<constraints nullable="false" unique="true" />
+			</column>
+			<column name="BRAND_ID" type="bigint">
+				<constraints nullable="false" />
+			</column>
+		</createTable>
+
+		<addForeignKeyConstraint
+			baseColumnNames="BRAND_ID" 
+			baseTableName="PATRIMONIES"
+			constraintName="FK_BRANDS" 
+			deferrable="false"
+			initiallyDeferred="false" 
+			onDelete="NO ACTION" 
+			onUpdate="NO ACTION"
+			referencedColumnNames="ID" 
+			referencedTableName="BRANDS"
+			validate="true" />
+			
+		<rollback>
+			<dropTable tableName="PATRIMONIES" />
+		</rollback>
+
+	</changeSet>
+
+</databaseChangeLog>
