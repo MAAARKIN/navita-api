@@ -4,7 +4,7 @@ api:
 spring:
    datasource:
       platform: postgres
-      url: jdbc:postgresql://dbpostgresql:5432/mydb
+      url: jdbc:postgresql://192.168.99.100:5432/mydb
       username: postgres
       password: password
    jpa:

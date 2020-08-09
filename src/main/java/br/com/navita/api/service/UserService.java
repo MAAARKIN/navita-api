@@ -38,7 +38,7 @@ public class UserService {
 		Example<User> example = Example.of(
 				user, 
 				ExampleMatcher
-				.matching()
+				.matchingAny()
 				.withIgnoreCase()
 				.withMatcher("email", ExampleMatcher.GenericPropertyMatchers.contains().ignoreCase()));
 		boolean exist = repository.exists(example);
