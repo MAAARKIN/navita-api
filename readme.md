@@ -47,3 +47,9 @@ Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtLmZpbGhvd0BnbWFpbC5jb20iLCJleHAiOjE1OTcw
 ou via algum client rest, basta utilizar esse valor no Header Authorization com o padrão "Authorization: Bearer + Token"
 
 vale salientar que entre a palavra Bearer e o Token, contem um espaço.
+
+### Testes
+
+Para esse projeto foi trabalhado tanto testes unitarios como testes de integração, todos eles utilizando já a versão do JUnit 5.
+
+Não foi feitos testes em todos os controllers nem serviços pois como é para um teste, foi feito somente em um de cada para exemplificar o conhecimento.
