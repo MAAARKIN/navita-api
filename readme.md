@@ -1,19 +1,19 @@
-#Patrimony Api Manager
+# Patrimony Api Manager
 
-###Introdução
+### Introdução
 
 Este projeto tem o intuito de apresentar a solução dos requisitos levantados no exercicio numero 2 do teste da navita.
 
-###Descrição
+### Descrição
 
 Para esse projeto foi utilizado o Spring boot + Postgresql + Jwt.
 
-###Pre Requisitos
+### Pre Requisitos
 
 	- Java 11
 	- Docker & Docker-compose
 
-###Iniciando o projeto
+### Iniciando o projeto
 ```shellscript
 git clone https://github.com/MAAARKIN/navita-api.git
 
@@ -30,7 +30,7 @@ docker-compose up
 
 A aplicação será disponibilizara através da porta 8080, para ter acesso aos serviços disponibilizados da api é possível acessar a url http://localhost:8080/swagger-ui.html
 
-###Autenticação
+### Autenticação
 
 Para o cadastro de novos acessos, foi disponibilizado o endpoint /auth/signup que poderá ser vista no Swagger, e para se autenticar na aplicação utilizar o endpoint /auth/signin.
 
